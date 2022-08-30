@@ -1,8 +1,7 @@
 # Different ubuntu flavors for base https://hub.docker.com/_/ubuntu/
 # Example Image if VM Ubuntu 18.0.4 (Bionic)
 FROM ubuntu:bionic
-LABEL owner="Hundo -P"
-
+LABEL owner="Nick Anderson"
 # Change working directory
 WORKDIR /opt/
 
@@ -20,10 +19,11 @@ RUN python2.7 get-pip.py
 RUN rm get-pip.py
 
 # Clone hard-coded repo
-# RUN git clone https://github.com/technickly/project1.git
+# RUN git clon
+#e https://github.com/technickly/project1.git
 
 # Pass in repo ENV from beginning of Dockerfile
-RUN git clone https://github.com/technickly/$gitrepo.git
+#RUN git clone https://github.com/nick,fcpeurope/$gitrepo.git
 
 # Adds local python requirements and image entrypoint shell script
 COPY requirements.txt /opt/requirements.txt
@@ -33,4 +33,4 @@ COPY entrypoint.sh /opt/entrypoint.sh
 RUN pip install -r /opt/requirements.txt
 
 # Kicks off entry shell script
-ENTRYPOINT ["/bin/bash", "/opt/entrypoint.sh"]
+#ENTRYPOINT ["/bin/bash", "/opt/entrypoint.sh"]
